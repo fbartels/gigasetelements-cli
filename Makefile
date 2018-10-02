@@ -9,6 +9,10 @@ docker-build:
 	@echo "Building Docker image"
 	docker build -t $(app_name) .
 
+docker-build-nc:
+	@echo "Building Docker image"
+	docker build --no-cache -t $(app_name) .
+
 docker-run: docker-build
 	docker run -it --rm \
         -v $(HOME)/.gigasetelements-cli:/root/.gigasetelements-cli \
